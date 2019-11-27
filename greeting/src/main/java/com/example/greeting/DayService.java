@@ -1,5 +1,6 @@
 package com.example.greeting;
 
+import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.rest.client.annotation.RegisterClientHeaders;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
@@ -14,5 +15,10 @@ import javax.ws.rs.Path;
 public interface DayService {
 
     @GET
+    @Fallback(fallbackMethod = "today")
     String day();
+
+    default String today() {
+        return "today";
+    }
 }
