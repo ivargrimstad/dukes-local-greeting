@@ -4,7 +4,7 @@ swarm:
     name: birthday
     url: http://localhost:9411/api/v1/spans
   http:
-    port: 8080
+    port: 8484
   bind:
     address: localhost
   # Example of passing in token verification information via project file

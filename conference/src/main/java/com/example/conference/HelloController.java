@@ -11,7 +11,7 @@ import javax.ws.rs.Path;
  *
  */
 @Traced
-@Path("/hello")
+@Path("/conference")
 @Singleton
 public class HelloController {
 
@@ -20,6 +20,6 @@ public class HelloController {
 
     @GET
     public String sayHello() {
-        return "Devoxx " + locationService.location();
+        return "Jakarta EE Tech Talk " + locationService.location();
     }
 }

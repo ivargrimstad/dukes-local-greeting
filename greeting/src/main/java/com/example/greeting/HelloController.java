@@ -20,9 +20,17 @@ public class HelloController {
     @RestClient
     private ConferenceService conferenceService;
 
+    @Inject
+    @RestClient
+    private TimeService timeService;
+
+    @Inject
+    @RestClient
+    private DayService dayService;
+
     @GET
     @Counted
     public String sayHello() {
-        return "Hello " + conferenceService.conference();
+        return "You have " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
     }
 }

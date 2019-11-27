@@ -6,11 +6,11 @@
   <artifactId>conference</artifactId>
   <version>1.0-SNAPSHOT</version>
   <properties>
-    <helidonVersion>1.3.1</helidonVersion>
+    <helidonVersion>1.4.0</helidonVersion>
     <final.name>conference</final.name>
     <package>com.example.conference</package>
     <failOnMissingWebXml>false</failOnMissingWebXml>
-    <mpVersion>3.0</mpVersion>
+    <mpVersion>3.1</mpVersion>
     <maven.compiler.source>13</maven.compiler.source>
     <maven.compiler.target>13</maven.compiler.target>
   </properties>
@@ -18,7 +18,7 @@
     <dependency>
       <groupId>org.eclipse.microprofile</groupId>
       <artifactId>microprofile</artifactId>
-      <version>3.0</version>
+      <version>3.2</version>
       <type>pom</type>
       <scope>provided</scope>
     </dependency>
