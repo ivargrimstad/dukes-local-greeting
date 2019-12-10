@@ -15,6 +15,6 @@ public class HelloController {
 
     @GET
     public String sayHello() {
-        return LocalTime.of(17, 00).format(DateTimeFormatter.ofPattern("HH:mm"));
+        return LocalTime.of(16, 20).format(DateTimeFormatter.ofPattern("HH:mm"));
     }
 }

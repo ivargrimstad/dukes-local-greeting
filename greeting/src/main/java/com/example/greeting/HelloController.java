@@ -31,6 +31,6 @@ public class HelloController {
     @GET
     @Counted
     public String sayHello() {
-        return "You have " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
+        return "You have a " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
     }
 }

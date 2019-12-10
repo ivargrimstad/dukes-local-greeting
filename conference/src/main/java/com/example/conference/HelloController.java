@@ -18,8 +18,9 @@ public class HelloController {
     @Inject
     private LocationService locationService;
 
+
     @GET
     public String sayHello() {
-        return "Jakarta EE Tech Talk " + locationService.location();
+        return "Java2Days Talk " + locationService.location();
     }
 }
