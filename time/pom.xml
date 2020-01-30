@@ -8,7 +8,7 @@
   <packaging>war</packaging>
   <properties>
     <final.name>time</final.name>
-    <payaraVersion>5.192</payaraVersion>
+    <payaraVersion>5.194</payaraVersion>
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -17,7 +17,7 @@
     <dependency>
       <groupId>org.eclipse.microprofile</groupId>
       <artifactId>microprofile</artifactId>
-      <version>2.2</version>
+      <version>3.2</version>
       <type>pom</type>
       <scope>provided</scope>
     </dependency>
@@ -36,7 +36,7 @@
           <plugin>
             <groupId>fish.payara.maven.plugins</groupId>
             <artifactId>payara-micro-maven-plugin</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.6</version>
             <executions>
               <execution>
                 <phase>package</phase>

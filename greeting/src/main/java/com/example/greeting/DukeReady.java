@@ -22,8 +22,8 @@ public class DukeReady implements HealthCheck {
     public HealthCheckResponse call() {
         return HealthCheckResponse.named("successful-check")
                 .up()
-                .withData("Location", "Morocco")
                 .withData("Duke", "Ready!")
+                .withData("Location", "Sandusky")
                 .build();
     }
 }

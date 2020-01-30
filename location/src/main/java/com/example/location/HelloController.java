@@ -16,11 +16,11 @@ import javax.ws.rs.Path;
 public class HelloController {
 
     @Inject
-    @ConfigProperty(name = "place", defaultValue = "You'll need to look out the window")
+    @ConfigProperty(name = "place", defaultValue = "Look out the window")
     String place;
 
     @GET
-//    @RolesAllowed("protected")
+    @RolesAllowed("protected")
     public String sayHello() {
         return place;
     }

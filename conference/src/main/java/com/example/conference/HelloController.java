@@ -1,6 +1,6 @@
 package com.example.conference;
 
-import org.eclipse.microprofile.opentracing.Traced;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -10,17 +10,16 @@ import javax.ws.rs.Path;
 /**
  *
  */
-@Traced
 @Path("/conference")
 @Singleton
 public class HelloController {
 
     @Inject
+    @RestClient
     private LocationService locationService;
-
 
     @GET
     public String sayHello() {
-        return "Java2Days Talk " + locationService.location();
+        return "Microservice Talk " + locationService.location();
     }
 }

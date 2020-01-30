@@ -9,18 +9,18 @@ import javax.enterprise.context.Dependent;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-@Path("/conference")
 @RegisterRestClient
 @RegisterClientHeaders
+@Path("/conference")
 @Dependent
 public interface ConferenceService {
 
-    @Timeout(500)
-    @Fallback(fallbackMethod = "something")
     @GET
+    @Timeout(500)
+    @Fallback(fallbackMethod = "sayIt")
     String conference();
 
-    default String something() {
-        return "something scheduled";
+    default String sayIt() {
+        return "something somewhere";
     }
 }

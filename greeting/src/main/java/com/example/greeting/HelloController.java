@@ -1,6 +1,5 @@
 package com.example.greeting;
 
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
@@ -8,6 +7,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -18,19 +19,21 @@ public class HelloController {
 
     @Inject
     @RestClient
-    private ConferenceService conferenceService;
+    ConferenceService conferenceService;
 
     @Inject
     @RestClient
-    private TimeService timeService;
+    DayService dayService;
 
     @Inject
     @RestClient
-    private DayService dayService;
+    TimeService timeService;
+
 
     @GET
+    @Produces(MediaType.TEXT_HTML)
     @Counted
     public String sayHello() {
-        return "You have a " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
+       return "You have a " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
     }
 }
