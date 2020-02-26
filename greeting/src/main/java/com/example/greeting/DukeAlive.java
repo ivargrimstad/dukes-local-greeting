@@ -23,6 +23,7 @@ public class DukeAlive implements HealthCheck {
         return HealthCheckResponse.named("successful-check")
                 .up()
                 .withData("Duke", "Alive!")
+                .withData("Location", "Foo")
                 .build();
     }
 }

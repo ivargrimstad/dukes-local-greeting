@@ -13,13 +13,12 @@ import javax.ws.rs.Path;
 @Path("/conference")
 @Singleton
 public class HelloController {
-
-    @Inject
-    @RestClient
-    private LocationService locationService;
+@Inject
+@RestClient
+private LocationService locationService;
 
     @GET
     public String sayHello() {
-        return "Microservice Talk " + locationService.location();
+        return "Microservice talk " + locationService.location();
     }
 }

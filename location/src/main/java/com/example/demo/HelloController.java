@@ -1,12 +1,12 @@
-package com.example.location;
+package com.example.demo;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
-
 import javax.annotation.security.RolesAllowed;
-import javax.inject.Inject;
+
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.inject.Inject;
 
 /**
  *
@@ -16,7 +16,7 @@ import javax.ws.rs.Path;
 public class HelloController {
 
     @Inject
-    @ConfigProperty(name = "place", defaultValue = "Look out the window")
+    @ConfigProperty(name = "place", defaultValue = "somewhere ")
     String place;
 
     @GET
@@ -24,4 +24,5 @@ public class HelloController {
     public String sayHello() {
         return place;
     }
+
 }

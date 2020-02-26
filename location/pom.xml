@@ -7,11 +7,11 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <properties>
-    <final.name>location</final.name>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <version.thorntail>2.6.0.Final</version.thorntail>
+    <final.name>location</final.name>
+    <version.quarkus>1.2.0.Final</version.quarkus>
   </properties>
   <dependencies>
     <dependency>
@@ -22,30 +22,35 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-auth-jwt</artifactId>
-      <version>3.8.1</version>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy</artifactId>
+      <version>${version.quarkus}</version>
     </dependency>
-  </dependencies>
+      <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-jwt</artifactId>
+      <version>${version.quarkus}</version>
+    </dependency>
+</dependencies>
   <build>
     <finalName>location</finalName>
   </build>
   <profiles>
     <profile>
-      <id>thorntail-v2</id>
+      <id>quarkus</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
       <build>
         <plugins>
           <plugin>
-            <groupId>io.thorntail</groupId>
-            <artifactId>thorntail-maven-plugin</artifactId>
-            <version>${version.thorntail}</version>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-maven-plugin</artifactId>
+            <version>${version.quarkus}</version>
             <executions>
               <execution>
                 <goals>
-                  <goal>package</goal>
+                  <goal>build</goal>
                 </goals>
               </execution>
             </executions>
@@ -55,20 +60,48 @@
       <dependencyManagement>
         <dependencies>
           <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>bom-all</artifactId>
-            <version>${version.thorntail}</version>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-universe-bom</artifactId>
+            <version>${version.quarkus}</version>
             <type>pom</type>
             <scope>import</scope>
           </dependency>
         </dependencies>
       </dependencyManagement>
-      <dependencies>
-        <dependency>
-          <groupId>io.thorntail</groupId>
-          <artifactId>microprofile</artifactId>
-        </dependency>
-      </dependencies>
+    </profile>
+    <profile>
+      <id>native</id>
+      <activation />
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-maven-plugin</artifactId>
+            <version>${version.quarkus}</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>native-image</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <enableHttpUrlHandler>true</enableHttpUrlHandler>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+      <dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-universe-bom</artifactId>
+            <version>${version.quarkus}</version>
+            <type>pom</type>
+            <scope>import</scope>
+          </dependency>
+        </dependencies>
+      </dependencyManagement>
     </profile>
   </profiles>
 </project>

@@ -1,6 +1,7 @@
 package com.example.greeting;
 
 import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Metered;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.inject.Inject;
@@ -23,17 +24,17 @@ public class HelloController {
 
     @Inject
     @RestClient
-    DayService dayService;
+    TimeService timeService;
 
     @Inject
     @RestClient
-    TimeService timeService;
-
+    DayService dayService;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
     @Counted
+    //@Metered(name = "foo")
     public String sayHello() {
-       return "You have a " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
+        return "You have a " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
     }
 }

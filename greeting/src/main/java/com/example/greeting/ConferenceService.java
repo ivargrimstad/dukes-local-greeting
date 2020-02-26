@@ -21,6 +21,6 @@ public interface ConferenceService {
     String conference();
 
     default String sayIt() {
-        return "something somewhere";
+        return "Dude, look out the window!";
     }
 }
