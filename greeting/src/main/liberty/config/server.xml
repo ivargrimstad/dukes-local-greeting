@@ -2,8 +2,8 @@
 <server description="${project.name}">
 
     <featureManager>
-        <feature>microProfile-3.2</feature>
-        <feature>usr:opentracingZipkin-0.31</feature>
+        <feature>microProfile-3.3</feature>
+        <feature>usr:opentracingZipkin-0.33</feature>
 
     </featureManager>
 

@@ -20,9 +20,9 @@ public class HelloController {
     String place;
 
     @GET
-//    @RolesAllowed("protected")
+    @RolesAllowed("protected")
     public String sayHello() {
-        return place;
+        return "at " + place;
     }
 
 }

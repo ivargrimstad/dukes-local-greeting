@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
@@ -18,6 +19,6 @@ public class HelloController {
 
     @GET
     public String sayHello() {
-        return LocalDate.now().getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+        return LocalDate.of(2020, Month.OCTOBER, 14).getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
     }
 }

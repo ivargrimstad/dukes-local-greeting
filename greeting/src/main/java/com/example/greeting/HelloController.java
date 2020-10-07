@@ -4,6 +4,7 @@ import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.Metered;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
@@ -34,6 +35,7 @@ public class HelloController {
     @Produces(MediaType.TEXT_HTML)
     @Counted
     //@Metered(name = "foo")
+    @RolesAllowed("user")
     public String sayHello() {
         return "You have a " + conferenceService.conference() + " " + dayService.day() + " at " + timeService.time();
     }

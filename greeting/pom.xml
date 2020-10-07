@@ -7,15 +7,15 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <properties>
-    <openliberty.maven.version>3.1</openliberty.maven.version>
+    <openliberty.maven.version>3.3-M3</openliberty.maven.version>
     <final.name>greeting</final.name>
     <failOnMissingWebXml>false</failOnMissingWebXml>
-    <openliberty.version>[19.0.0.9,)</openliberty.version>
-    <maven.compiler.source>13</maven.compiler.source>
-    <maven.compiler.target>13</maven.compiler.target>
+    <openliberty.version>[20.0.0.9,)</openliberty.version>
+    <maven.compiler.source>14</maven.compiler.source>
+    <maven.compiler.target>14</maven.compiler.target>
 
     <zipkin.usr.feature>
-      https://github.com/WASdev/sample.opentracing.zipkintracer/releases/download/1.3/liberty-opentracing-zipkintracer-1.3-sample.zip
+      https://github.com/WASdev/sample.opentracing.zipkintracer/releases/download/2.0-RC1/liberty-opentracing-zipkintracer-2.0-RC1-sample.zip
     </zipkin.usr.feature>
 
   </properties>
@@ -23,7 +23,7 @@
     <dependency>
       <groupId>org.eclipse.microprofile</groupId>
       <artifactId>microprofile</artifactId>
-      <version>3.2</version>
+      <version>3.3</version>
       <type>pom</type>
       <scope>provided</scope>
     </dependency>
